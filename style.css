@@ -2,18 +2,19 @@ body {
     font-family: "Balsamiq Sans", cursive;
   }
   
-  .container {
+  .container-fluid {
     margin: 5px;
   }
   
   .header {
     background-color: lightblue;
     text-align: center;
+    padding: 20px;
   }
   
   .side {
     border-style: solid;
-    height: 500px;
+    height: 700px;
     background-color: lightgray;
   }
   
@@ -22,10 +23,16 @@ body {
     background-color: lightyellow;
   }
   .row {
-    margin-left: 0;
+    margin-left: 20px;
+    height: 275px;
   }
   
   .forecast {
     border-style: solid;
     background-color: lightblue;
+    height: 275px;
+  }
+
+  #button {
+    background-color: lightyellow;
   }
