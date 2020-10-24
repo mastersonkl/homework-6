@@ -57,3 +57,9 @@ body {
     text-align: center;
     color: white;
   }
+
+  .buttons {
+      background-color:  rgb(40, 74, 185);
+      color: white;
+      border-radius: 25%;
+  }
