@@ -1,0 +1,31 @@
+body {
+    font-family: "Balsamiq Sans", cursive;
+  }
+  
+  .container {
+    margin: 5px;
+  }
+  
+  .header {
+    background-color: lightblue;
+    text-align: center;
+  }
+  
+  .side {
+    border-style: solid;
+    height: 500px;
+    background-color: lightgray;
+  }
+  
+  .dashboard {
+    border-style: solid;
+    background-color: lightyellow;
+  }
+  .row {
+    margin-left: 0;
+  }
+  
+  .forecast {
+    border-style: solid;
+    background-color: lightblue;
+  }
