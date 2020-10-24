@@ -5,7 +5,7 @@ $(document).ready(function () {
     var citynames = [];
     var clear =
         "https://www.clipartmax.com/png/middle/24-248320_sunny-weather-symbol-transparent.png";
-    var cloudy =
+    var cloud =
         "https://c7.uihere.com/files/46/200/53/t-shirt-cloud-weather-clip-art-vector-cloudy-weather-forecast-icon-material.jpg";
     var rain =
         "https://www.pinclipart.com/picdir/middle/27-270336_clouds-weather-rain-rain-clip-art-png-transparent.png";
@@ -30,7 +30,6 @@ $(document).ready(function () {
 
         $(".buttons").on("click", function (event) {
             event.preventDefault();
-            console.log("hi");
 
             var cityN = $(this).attr("data-name");
             var key = "d4509dfb81dd238fb34f3ecd8571fb73";
@@ -60,6 +59,21 @@ $(document).ready(function () {
                         response.city.name + "  (" + formatDate + ")"
                     );
 
+                    var picture = $("<img>");
+                    var weather = response.list[0].weather[0].main;
+
+                    if (weather === "Rain") {
+                        picture.attr("src", rain);
+                    }
+                    if (weather === "Clouds") {
+                        picture.attr("src", cloud);
+                    }
+                    if (weather === "Clear") {
+                        picture.attr("src", clear);
+                    }
+                    picture.attr("width", "100px");
+                    picture.attr("height", "100px");
+
                     // temp and converts to fahrenheit
                     var minidash = $("<p class = 'temp'>");
                     var k = response.list[0].main.temp;
@@ -79,7 +93,7 @@ $(document).ready(function () {
                     var windSpeed = response.list[0].wind.speed;
                     windLine.text("Wind Speed: " + windSpeed);
 
-                    dashboard.append(cityName, minidash, humLine, windLine);
+                    dashboard.append(cityName, picture, minidash, humLine, windLine);
 
                 }
                 function getForecast() {
@@ -89,13 +103,8 @@ $(document).ready(function () {
                     for (var i = 0; i < divNames.length; i++) {
                         var divs = $("<div>");
                         divs.addClass("forecastDiv col-lg-2");
-                        divs.attr("ID", divNames[i]);
-                        var image = $(
-                            "<img data-rain = 'https://www.pinclipart.com/picdir/middle/27-270336_clouds-weather-rain-rain-clip-art-png-transparent.png' data-clear = 'https://www.clipartmax.com/png/middle/24-248320_sunny-weather-symbol-transparent.png' data-cloudy = 'https://c7.uihere.com/files/46/200/53/t-shirt-cloud-weather-clip-art-vector-cloudy-weather-forecast-icon-material.jpg' data-status = 'none'>"
-                        );
-
                         forecast.append(divs);
-                        divs.append(image);
+
                     }
 
                     var div1 = $("#div1");
@@ -109,8 +118,21 @@ $(document).ready(function () {
                     var hum1 = $("<p>").text(
                         "Humidity: " + response.list[7].main.humidity
                     );
-                    div1.append(date1, formatTemp1, hum1);
-                    console.log(response.list[7].main.humidity);
+                    var picture1 = $("<img>");
+                    var weather1 = response.list[7].weather[0].main;
+
+                    if (weather1 === "Rain") {
+                        picture1.attr("src", rain);
+                    }
+                    if (weather1 === "Clouds") {
+                        picture1.attr("src", cloud);
+                    }
+                    if (weather1 === "Clear") {
+                        picture1.attr("src", clear);
+                    }
+                    picture1.attr("width", "50px");
+                    picture1.attr("height", "50px");
+                    div1.append(date1, picture1, formatTemp1, hum1);
 
 
                     var div2 = $("#div2");
@@ -124,7 +146,22 @@ $(document).ready(function () {
                     var hum2 = $("<p>").text(
                         "Humidity: " + response.list[15].main.humidity
                     );
-                    div2.append(date2, formatTemp2, hum2);
+                    var picture2 = $("<img>");
+                    var weather2 = response.list[15].weather[0].main;
+
+                    if (weather2 === "Rain") {
+                        picture2.attr("src", rain);
+                    }
+                    if (weather2 === "Clouds") {
+                        picture2.attr("src", cloud);
+                    }
+                    if (weather2 === "Clear") {
+                        picture2.attr("src", clear);
+                    }
+                    picture2.attr("width", "50px");
+                    picture2.attr("height", "50px");
+                    div2.append(date2, picture2, formatTemp2, hum2);
+
 
                     var div3 = $("#div3");
                     var formattedDate3 = moment(response.list[23].dt_txt).format(
@@ -137,7 +174,22 @@ $(document).ready(function () {
                     var hum3 = $("<p>").text(
                         "Humidity: " + response.list[23].main.humidity
                     );
-                    div3.append(date3, formatTemp3, hum3);
+                    var picture3 = $("<img>");
+                    var weather3 = response.list[23].weather[0].main;
+
+                    if (weather3 === "Rain") {
+                        picture3.attr("src", rain);
+                    }
+                    if (weather3 === "Clouds") {
+                        picture3.attr("src", cloud);
+                    }
+                    if (weather3 === "Clear") {
+                        picture3.attr("src", clear);
+                    }
+                    picture3.attr("width", "50px");
+                    picture3.attr("height", "50px");
+                    div3.append(date3, picture3, formatTemp3, hum3);
+
 
                     var div4 = $("#div4");
                     var formattedDate4 = moment(response.list[31].dt_txt).format(
@@ -150,7 +202,21 @@ $(document).ready(function () {
                     var hum4 = $("<p>").text(
                         "Humidity: " + response.list[31].main.humidity
                     );
-                    div4.append(date4, formatTemp4, hum4);
+                    var picture4 = $("<img>");
+                    var weather4 = response.list[31].weather[0].main;
+
+                    if (weather4 === "Rain") {
+                        picture4.attr("src", rain);
+                    }
+                    if (weather4 === "Clouds") {
+                        picture4.attr("src", cloud);
+                    }
+                    if (weather4 === "Clear") {
+                        picture4.attr("src", clear);
+                    }
+                    picture4.attr("width", "50px");
+                    picture4.attr("height", "50px");
+                    div4.append(date4, picture4, formatTemp4, hum4);
 
                     var div5 = $("#div5");
                     var formattedDate5 = moment(response.list[39].dt_txt).format(
@@ -163,7 +229,21 @@ $(document).ready(function () {
                     var hum5 = $("<p>").text(
                         "Humidity: " + response.list[39].main.humidity
                     );
-                    div5.append(date5, formatTemp5, hum5);
+                    var picture5 = $("<img>");
+                    var weather5 = response.list[39].weather[0].main;
+
+                    if (weather5 === "Rain") {
+                        picture5.attr("src", rain);
+                    }
+                    if (weather5 === "Clouds") {
+                        picture5.attr("src", cloud);
+                    }
+                    if (weather5 === "Clear") {
+                        picture5.attr("src", clear);
+                    }
+                    picture5.attr("width", "50px");
+                    picture5.attr("height", "50px");
+                    div5.append(date5, picture5, formatTemp5, hum5);
                 }
             });
         });

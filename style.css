@@ -11,6 +11,7 @@ body {
     text-align: center;
     padding: 20px;
     border-style: solid;
+    text-shadow: 3px 3px white;
   }
   
   .side {
@@ -63,3 +64,5 @@ body {
       color: white;
       border-radius: 25%;
   }
+
+
