@@ -73,7 +73,7 @@ $(document).ready(function () {
                 $(".buttonSpace").empty();
                 for (var i = 0; i < citynames.length; i++) {
                     var button = $("<button>").attr("data-name", citynames[i]);
-                    button.addClass("button");
+                    button.addClass("buttons");
                     button.text(citynames[i]);
                     buttonSpace.append(button);
                 }
