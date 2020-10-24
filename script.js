@@ -26,6 +26,7 @@ $(document).ready(function () {
 
             // main dashboard weather
             function mainDash() {
+                dashboard.empty();
 
                 // city name and date
                 var todaysDate = response.list[0].dt_txt;
@@ -58,6 +59,16 @@ $(document).ready(function () {
                 dashboard.append(cityName, minidash, humLine, windLine);
             }
 
+
+            function renderButton() {
+                $(".buttonSpace").empty();
+                for (var i = 0; i < citynames.length; i++) {
+                    var button = $("<button>").attr("data-name", citynames[i]);
+                    button.addClass("button");
+                    button.text(citynames[i]);
+                    buttonArea.append(button);
+                }
+            }
 
 
 
