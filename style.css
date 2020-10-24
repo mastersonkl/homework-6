@@ -16,11 +16,13 @@ body {
     border-style: solid;
     height: 700px;
     background-color: lightgray;
+    margin-top: 7px;
   }
   
   .dashboard {
     border-style: solid;
     background-color: lightyellow;
+    margin: 7px;
   }
   .row {
     margin-left: 20px;
@@ -31,8 +33,20 @@ body {
     border-style: solid;
     background-color: lightblue;
     height: 275px;
+    margin: 7px;
   }
 
   #button {
     background-color: lightyellow;
+  }
+
+  .forecastDiv {
+    background-color: rgb(40, 74, 185);
+    margin: 15px;
+    border-style: solid;
+    width: 15%;
+    height: 200px;
+    float: left;
+    text-align: center;
+    color: white;
   }
