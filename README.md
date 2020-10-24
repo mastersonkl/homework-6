@@ -1,7 +1,5 @@
 # homework-6
 
-# fitness-tracker
-
 <h2> Weather Dashboard</h2> 
 
 <h2> Author </h2>
