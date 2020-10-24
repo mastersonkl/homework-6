@@ -25,6 +25,7 @@ body {
     border-style: solid;
     background-color: lightyellow;
     margin: 7px;
+    height: 300px;
   }
   .row {
     margin-left: 20px;
@@ -34,7 +35,6 @@ body {
   .forecast {
     border-style: solid;
     background-color: lightblue;
-    height: 275px;
     margin: 7px;
   }
 
